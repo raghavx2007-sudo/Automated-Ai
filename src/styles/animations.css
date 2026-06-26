@@ -1,0 +1,60 @@
+/* Advanced Premium Animations */
+@layer utilities {
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-blob {
+    animation: blob 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-blob-delayed {
+    animation: blob 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    animation-delay: 4s;
+  }
+  
+  .animate-blob-delayed-long {
+    animation: blob 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    animation-delay: 8s;
+  }
+
+  .animate-gradient-border {
+    animation: gradientBorder 4s linear infinite;
+  }
+
+  .glass-panel {
+    background: rgba(17, 76, 90, 0.05); /* nocturnal-expedition very sheer */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-panel-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .glass-panel-hover:hover {
+    background: rgba(17, 76, 90, 0.15);
+    border: 1px solid rgba(255, 200, 1, 0.2); /* forsythia sheer */
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 200, 1, 0.05);
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  33% { transform: translate(30px, -50px) scale(1.1) rotate(45deg); }
+  66% { transform: translate(-20px, 20px) scale(0.9) rotate(90deg); }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+}
+
+@keyframes gradientBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
